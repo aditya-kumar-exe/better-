@@ -22,7 +22,7 @@ jobs:
           name: Build Docker image
           command: |
             docker build -t nodejawebapp -t adi/nodejawebapp:latest .
-            echo $DOCKER_PASSWORD | docker login -u adi --password-stdin
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
             docker push adi/nodejawebapp:latest
 
 workflows:
